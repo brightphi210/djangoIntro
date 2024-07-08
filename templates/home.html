@@ -10,17 +10,74 @@
     <link rel="stylesheet" href="{% static 'CSS/styles.css'%}">
 </head>
 <body>
-    <h2>This is Home page</h2>
-    
-    {% for i in task %}
-    <div class="todoDiv">
-        <p>{{i.title}}</p> 
-        <p>{{i.description}}</p>
-        <p>{{i.created_at}}</p>
-        <button>Delete</button>
-        <button>Update</button>
-    </div>
-    {% endfor %}
 
+
+    <div class="mainDiv">
+        <h2 class="text ">Todo App</h2>
+
+
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <div>
+                <input type="text" required placeholder="Enter title" name="title">
+                <textarea name="description" placeholder="Enter description" id=""></textarea>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <div class="eachDivMain">
+            {% for task in tasks %}
+
+            <div>
+
+                <div class="eachDiv">
+                    <div>
+                        <p>{{task.id}}</p>
+                        <h2>{{task.title}}</h2>
+                        <p>{{task.description}}</p>
+                    </div>
+
+                    <div class="eachBtns">
+
+                        <a href="{% url 'update' task.id %}">
+                            <button>Edit</button>
+                        </a>
+
+                        <a href="{% url 'remove' task.id %}">
+                            <button class="del">Delete</button>
+                        </a>
+                        
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+        <!-- {% for i in task %}
+        <div class="myDiv">
+            <div class="todoDiv">
+                
+                <div class="itemsDiv">
+                    <h2>{{i.title}}</h2> 
+                    <p>{{i.description}}</p>
+                </div>
+
+                <div class="btnDiv">
+                    <button class="del">Delete</button>
+                    <a href=""><button>Update</button></a>
+                </div>
+            </div>
+            </div>
+        {% endfor %} -->
+        
+
+
+    </div>
+    
 </body>
 </html>

@@ -3,16 +3,119 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 
 body{
-    background-color: aqua;
 }
 
 
-.todoDiv{
+.mainDiv{
     background-color: white;
-    padding: 10px;
-    margin: 10px 0;
+    border-radius: 30px;
+    padding: 30px;
+    width: 100%;
+}
+
+
+.text{
+    padding: 20px 0;
+    background-color: rgb(40, 3, 86);
+    text-align: center;
+    color: white;
+}
+
+form{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+
+form div{
+    width: 50%;
+}
+
+form input{
+    width: 100%;
+    padding: 20px;
+    border: rgb(182, 181, 181) solid 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+form textarea{
+    width: 100%;
+    padding: 20px;
+    border: rgb(182, 181, 181) solid 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+form button{
+    background-color: rgb(37, 4, 112);
+    color: white;
+    padding: 15px 40px;
+    width: fit-content;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+.eachDivMain{
+    background-color: rgb(233, 233, 233);
+    height: 60vh;
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.eachDiv{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+.eachDiv h2{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+
+.eachDiv p{
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+.eachBtns{
+    display: flex;
+    margin-left: auto;
+    gap: 10px;
+    height: fit-content;
+}
+
+
+.eachBtns button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    border: none;
+    color: white;
+    background-color: rgb(33, 2, 73);
+    cursor: pointer;
+}
+
+.del{
+    background-color: rgb(218, 7, 7) !important;
+    color: white;
 }

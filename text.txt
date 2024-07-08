@@ -1,0 +1,19 @@
+
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        TodoTable.objects.create(title=title, description=description)
+        return redirect('/')
+
+
+    def update_task(request, pk):
+    task = TodoTable.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        newtitle = request.POST.get('newtitle')
+
+        task.title = newtitle
+        task.save()
+        return redirect('/')
+
+    return render(request, 'update.html', {'task': task})
