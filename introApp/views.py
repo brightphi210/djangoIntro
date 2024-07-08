@@ -20,6 +20,8 @@ def home(request):
     return render(request, 'home.html', {'tasks' : alltask})
 
 
+
+# update function
 def updateTask(request, pk):
     task = TodoTable.objects.get(pk=pk)
     if request.method == 'POST':
@@ -32,6 +34,7 @@ def updateTask(request, pk):
         return redirect('/')
     return render(request, 'update.html', {'task': task})
 
+# delete function 
 def deleteTask(request, pk):
     task = TodoTable.objects.get(pk=pk)
     task.delete()
